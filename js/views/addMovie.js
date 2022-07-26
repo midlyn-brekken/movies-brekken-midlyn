@@ -10,6 +10,7 @@ export default function addNewMovieView(props) {
         <input class="form-control" list="datalistOptions"  type="input" placeholder="Rating" id="rating">
       
         <button class="form-control" id="movie-btn">Add movie to list</button>
+        <input type="button" id="delete" value="delete">
     </form>
 </div>
 <h1 id="a" ></h1>
@@ -19,7 +20,7 @@ export default function addNewMovieView(props) {
 
 export function addNewMovieEvents() {
     let movieButton = document.getElementById("movie-btn");
-    movieButton.addEventListener("click", function (event){
+    movieButton.addEventListener("click", function (event) {
         let userMovieTitle = document.getElementById("movie-title").value;
         let userMovieRating = document.getElementById("rating").value;
         let a = document.getElementById("a");
@@ -32,11 +33,11 @@ export function addNewMovieEvents() {
                 'Content-Type': 'application/json',
 
             },
-            body: JSON.stringify({title:userMovieTitle})
+            body: JSON.stringify({title: userMovieTitle})
         }
-        fetch('https://codeup-json-server.glitch.me/movies', addedMovies)
-            .then(function(response) {
-                if(!response.ok) {
+        fetch('https://horse-shore-neon.glitch.me/movies', addedMovies)
+            .then(function (response) {
+                if (!response.ok) {
                     console.log("movie added error: " + response.status);
                 } else {
                     console.log("movie added");
@@ -44,6 +45,31 @@ export function addNewMovieEvents() {
                 }
             });
 
+    })
+        let deleteButton =  document.getElementById("delete");
+        deleteButton.addEventListener("click", function (event){
+
+
+            let deleteMovies = {
+                method: "Delete",
+                headers: {
+                    'Content-Type': 'application/json',
+
+                },
+
+            }
+
+            let id = 11
+
+            fetch(`https://horse-shore-neon.glitch.me/movies/${id}`, deleteMovies)
+                .then(function(response) {
+                    if(!response.ok) {
+                        console.log("movie deleted error: " + response.status);
+                    } else {
+                        console.log("movie delete");
+                        createView('/register');
+                    }
+                });
 
 
 
