@@ -40,7 +40,14 @@ export default function router(URI) {
         },
         '/register': {
             returnView: Register,
-            state: {},
+            state: {
+                movies: {
+                    url: "https://horse-shore-neon.glitch.me/movies",
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                }
+            },
             uri: '/register',
             title: 'Register',
             viewEvent: RegisterEvent

@@ -8,3 +8,5 @@ application.properties
 
 .idea
 *.iml
+
+private.constants.js
