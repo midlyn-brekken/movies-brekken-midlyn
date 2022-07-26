@@ -18,7 +18,7 @@ export default function Navbar(props) {
     } else {
         // if not logged in, can see login and register
         html = html + `<a class="jalopy-nav" href="/login" data-link>Login</a>
-        <a class="jalopy-nav" href="/register" data-link>Register</a>`;
+        <a class="jalopy-nav" href="/register" data-link>Movies</a>`;
     }
 
     html = html + `</nav>`;
