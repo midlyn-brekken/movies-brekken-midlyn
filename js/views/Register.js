@@ -63,21 +63,7 @@ export function RegisterEvent(){
                     </div>
                     <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
                         <h3>${movies[9].title}</h3>
-                    </div>
-                    <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
-                        <h3>${movies[i].title}</h3>
-                    </div>
-                    <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
-                        <h3>${movies[i].title}</h3>
-                    </div>
-                    <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
-                        <h3>${movies[i].title}</h3>
-                    </div>
-                    <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
-                        <h3>${movies[i].title}</h3>
-                    </div>
-                    <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
-                        <h3>${movies[9].title}</h3>
+                        <button id="edit">edit</button>
                     </div>
 
                 `
@@ -92,6 +78,10 @@ export function RegisterEvent(){
             movieTitles.innerHTML += `
                 </div>
             `
+            const editBtn = document.querySelector("#edit");
+            editBtn.addEventListener("click", function(){
+
+            })
 
             console.log(movies[i].title)
         }
