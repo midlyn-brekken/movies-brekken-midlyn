@@ -42,6 +42,8 @@ export function RegisterEvent(){
                 html += `
                     <div class="panel ${activeString}" style="background-image: url('${movies[j].poster}')">
                         <h3>${movies[j].title}</h3>
+                        <input type="button" value="💣" style="width: 40px;border-radius: 20px" id="delete">
+
                     </div>
                 `
             }
@@ -49,6 +51,36 @@ export function RegisterEvent(){
             movieTitles.innerHTML = html + `
                 </div>
             `
+
+        let deleteButton = document.querySelectorAll("#delete");
+        for (let i = 0; i < movies.length; i++) {
+            deleteButton[i].addEventListener("click", function (event){
+
+                let deleteMovies = {
+                    method: "Delete",
+                    headers: {
+                        'Content-Type': 'application/json',
+
+                    },
+
+                }
+
+                let id = movies[i].id
+
+                fetch(`https://horse-shore-neon.glitch.me/movies/${id}`, deleteMovies)
+                    .then(function(response) {
+                        if(!response.ok) {
+                            console.log("movie deleted error: " + response.status);
+                        } else {
+                            console.log("movie delete");
+                            createView('/register');
+                        }
+                    });
+
+
+            })
+        }
+
 
         const panels = document.querySelectorAll('.panel')
         panels.forEach((panel) => {
