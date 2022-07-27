@@ -45,14 +45,22 @@ body, html {
 }
 .panel.active h3 {
     opacity: 1;
-    /*transition: opacity 0.3s ease-in;*/
 }
-@media (max-width: 480px) {
+@media (max-width: 765px) {
     .container {
         width: 100vw;
     }
-    .panel:nth-of-type(4),
-    .panel:nth-of-type(5) {
+    .panel:nth-of-type(6),
+    .panel:nth-of-type(7),
+    .panel:nth-of-type(8),
+    .panel:nth-of-type(9),
+    .panel:nth-of-type(10){
         display: none;
     }
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
 }
