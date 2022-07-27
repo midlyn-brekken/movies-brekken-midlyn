@@ -42,8 +42,9 @@ export function RegisterEvent(){
                 html += `
                     <div class="panel ${activeString}" style="background-image: url('${movies[j].poster}')">
                         <h3>${movies[j].title}</h3>
+<!--                        <p>${movies[j].rating + "⭐️"}</p>-->
                         <input type="button" value="💣" style="width: 40px;border-radius: 20px" id="delete">
-
+                        <input type="button" value="✏️" style="width: 40px;border-radius: 20px; float: right;" id="edit">
                     </div>
                 `
             }
@@ -76,10 +77,44 @@ export function RegisterEvent(){
                             createView('/register');
                         }
                     });
+            })
+        }
 
+        let editButton = document.querySelectorAll("#edit");
+        for (let i = 0; i < movies.length; i++) {
+            editButton[i].addEventListener("click", function (event) {
+
+                // let userMovieTitle = prompt("enter movie")
+                let newMovie = ""
+
+                // newMovie = userMovieTitle
+                let editMovies = {
+                    method: "PATCH",
+                    headers: {
+                        'Content-Type': 'application/json',
+
+                    },
+                    body: JSON.stringify({title: newMovie})
+                }
+
+                let id = movies[i].id;
+
+                fetch(`https://horse-shore-neon.glitch.me/movies/${id}`, editMovies)
+                    .then(function (response) {
+                        if (!response.ok) {
+                            console.log("movie added error: " + response.status);
+                        } else {
+                            console.log("movie updated");
+                            createView('/edit-movie');
+                        }
+                    });
 
             })
         }
+
+
+
+
 
 
         const panels = document.querySelectorAll('.panel')
