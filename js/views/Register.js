@@ -34,10 +34,10 @@ export function RegisterEvent(){
             // movieTitles.innerHTML  += "Movie Title:" + movies[i].title
             movieTitles.innerHTML = `
                 <div class="container">
-                    <div class="panel active" style="background-image: url('https://i1.sndcdn.com/artworks-000123690573-uhuyr7-t500x500.jpg')">
+                    <div class="panel" style="background-image: url('https://i1.sndcdn.com/artworks-000123690573-uhuyr7-t500x500.jpg')">
                         <h3>${movies[0].title}</h3>
                     </div>
-                    <div class="panel" style="background-image: url('https://www.japantrendshop.com/img/products/5903/5903-demon-Slayer-kimetsu-no-yaiba-movie-poster-jigsaw-puzzle-2.jpg')">
+                    <div class="panel" style="background-image: url('https://www.thenewsfetcher.com/wp-content/uploads/2020/08/DSKY-Movie-Poster_FINAL-scaled-1-e1593800575920.jpg')">
                         <h3>${movies[1].title}</h3>
                     </div>
                     <div class="panel" style="background-image: url('https://www.lcc.edu/lookout/_resources/images/uncharted-photo.jpeg')">
@@ -64,9 +64,34 @@ export function RegisterEvent(){
                     <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
                         <h3>${movies[9].title}</h3>
                     </div>
-                </div>
+                    <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
+                        <h3>${movies[i].title}</h3>
+                    </div>
+                    <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
+                        <h3>${movies[i].title}</h3>
+                    </div>
+                    <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
+                        <h3>${movies[i].title}</h3>
+                    </div>
+                    <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
+                        <h3>${movies[i].title}</h3>
+                    </div>
+                    <div class="panel" style="background-image: url('https://movieposters2.com/images/1256021-b.jpg')">
+                        <h3>${movies[9].title}</h3>
+                    </div>
 
                 `
+            // for (let j = 0; j < movies.length; j++) {
+            //     movieTitles.innerHTML += `
+            //         <div class="panel" style="background-image: url('${movies[j].poster}')">
+            //             <h3>${movies[j].title}</h3>
+            //         </div>
+            //     `
+            // }
+
+            movieTitles.innerHTML += `
+                </div>
+            `
 
             console.log(movies[i].title)
         }
