@@ -2,18 +2,20 @@ import createView from "../createView.js"
 
 export default function addNewMovieView(props) {
     return `
-<form class="container" style="color: crimson">
-    <h1>New movies</h1>
-    <form>
-        <label for="dogFactText" class="form-label">User picks</label>
-        <input class="form-control" list="datalistOptions" id="movie-title" placeholder="Movie Title" style="height: 50px;margin: 10px">
-        <input class="form-control" list="datalistOptions"  type="input" placeholder="Rating" id="rating" style="height: 50px;margin: 10px">
-      
-        <button class="form-control" id="movie-btn" style="border: 5px dotted yellow;margin-top: 100px;position: absolute">Add movie to list</button>
-<!--        <input type="button" id="delete" value="delete">-->
-    </form>
+<div class="popcorn">
+    <form class="container" style="color: crimson">
+        <h1>New movies</h1>
+        <form>
+            <label for="dogFactText" class="form-label">User picks</label>
+            <input class="form-control" list="datalistOptions" id="movie-title" placeholder="Movie Title" style="height: 50px;margin: 10px">
+            <input class="form-control" list="datalistOptions"  type="input" placeholder="Rating" id="rating" style="height: 50px;margin: 10px">
+          
+            <button class="form-control" id="movie-btn" style="border: 5px dotted yellow;margin-top: 100px;position: absolute">Add movie to list</button>
+    <!--        <input type="button" id="delete" value="delete">-->
+        </form>
+    </div>
+    <h1 id="a" ></h1>
 </div>
-<h1 id="a" ></h1>
 `;
 }
 
@@ -46,35 +48,35 @@ export function addNewMovieEvents() {
             });
 
     })
-        let deleteButton =  document.getElementById("delete");
-        deleteButton.addEventListener("click", function (event){
-
-
-            let deleteMovies = {
-                method: "Delete",
-                headers: {
-                    'Content-Type': 'application/json',
-
-                },
-
-            }
-
-            let id = 11
-
-            fetch(`https://horse-shore-neon.glitch.me/movies/${id}`, deleteMovies)
-                .then(function(response) {
-                    if(!response.ok) {
-                        console.log("movie deleted error: " + response.status);
-                    } else {
-                        console.log("movie delete");
-                        createView('/register');
-                    }
-                });
-
-
-
-
-    })
+    //     let deleteButton =  document.getElementById("delete");
+    //     deleteButton.addEventListener("click", function (event){
+    //
+    //
+    //         let deleteMovies = {
+    //             method: "Delete",
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //
+    //             },
+    //
+    //         }
+    //
+    //         let id = 11
+    //
+    //         fetch(`https://horse-shore-neon.glitch.me/movies/${id}`, deleteMovies)
+    //             .then(function(response) {
+    //                 if(!response.ok) {
+    //                     console.log("movie deleted error: " + response.status);
+    //                 } else {
+    //                     console.log("movie delete");
+    //                     createView('/register');
+    //                 }
+    //             });
+    //
+    //
+    //
+    //
+    // })
 
 
 

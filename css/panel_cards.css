@@ -85,3 +85,9 @@ p {
     justify-content: center;
     align-self: flex-end;
 }
+
+.popcorn{
+    background-image: url("/assets/animated-popcorn.gif");
+    height: 800px;
+    background-size: cover;
+}
