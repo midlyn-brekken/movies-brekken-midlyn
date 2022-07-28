@@ -6,10 +6,10 @@ export default function addNewMovieView(props) {
     <h1>New movies</h1>
     <form>
         <label for="dogFactText" class="form-label">User picks</label>
-        <input class="form-control" list="datalistOptions" id="movie-title" placeholder="Movie Title" style="height: 50px">
-        <input class="form-control" list="datalistOptions"  type="input" placeholder="Rating" id="rating" style="height: 50px">
+        <input class="form-control" list="datalistOptions" id="movie-title" placeholder="Movie Title" style="height: 50px;margin: 10px">
+        <input class="form-control" list="datalistOptions"  type="input" placeholder="Rating" id="rating" style="height: 50px;margin: 10px">
       
-        <button class="form-control" id="movie-btn" style="border: 5px dotted yellow;margin: 50px">Add movie to list</button>
+        <button class="form-control" id="movie-btn" style="border: 5px dotted yellow;margin-top: 100px;position: absolute">Add movie to list</button>
 <!--        <input type="button" id="delete" value="delete">-->
     </form>
 </div>

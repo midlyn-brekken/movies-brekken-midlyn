@@ -6,7 +6,7 @@ const BASE_URI = `${BACKEND_HOST}/api/s3/download`;
 export default function Home(props) {
     return `
         <header>
-            <h1 class="glow" style="font-family: cursive;">Stacks Flicks <br>With Pickle Rick</h1>
+            <h1 class="glow" style="font-family: cursive;">Stack's Flicks <br>With Pickle Rick</h1>
             <img src="assets/picrik.gif" style="height: 25em; width: 25em">
         </header>
         <main>
