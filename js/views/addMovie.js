@@ -2,7 +2,7 @@ import createView from "../createView.js"
 
 export default function addNewMovieView(props) {
     return `
-<form class="container">
+<form class="container" style="color: crimson">
     <h1>New movies</h1>
     <form>
         <label for="dogFactText" class="form-label">User picks</label>
@@ -10,7 +10,7 @@ export default function addNewMovieView(props) {
         <input class="form-control" list="datalistOptions"  type="input" placeholder="Rating" id="rating">
       
         <button class="form-control" id="movie-btn">Add movie to list</button>
-        <input type="button" id="delete" value="delete">
+<!--        <input type="button" id="delete" value="delete">-->
     </form>
 </div>
 <h1 id="a" ></h1>
@@ -33,7 +33,7 @@ export function addNewMovieEvents() {
                 'Content-Type': 'application/json',
 
             },
-            body: JSON.stringify({title: userMovieTitle})
+            body: JSON.stringify({title: userMovieTitle,rating:userMovieRating})
         }
         fetch('https://horse-shore-neon.glitch.me/movies', addedMovies)
             .then(function (response) {

@@ -84,10 +84,10 @@ export function RegisterEvent(){
         for (let i = 0; i < movies.length; i++) {
             editButton[i].addEventListener("click", function (event) {
 
-                // let userMovieTitle = prompt("enter movie")
+                let userMovieTitle = prompt(`Title:${movies[i].title} Rating:${movies[i].rating} 💫`)
                 let newMovie = ""
 
-                // newMovie = userMovieTitle
+                newMovie = userMovieTitle
                 let editMovies = {
                     method: "PATCH",
                     headers: {
@@ -105,7 +105,7 @@ export function RegisterEvent(){
                             console.log("movie added error: " + response.status);
                         } else {
                             console.log("movie updated");
-                            createView('/edit-movie');
+                            createView('/register');
                         }
                     });
 

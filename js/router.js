@@ -1,5 +1,5 @@
 import Home, {HomeEvents} from "./views/Home.js";
-import About, {AboutEvents} from "./views/About.js";
+// import About, {AboutEvents} from "./views/About.js";
 import Error404 from "./views/Error404.js";
 import Loading from "./views/Loading.js";
 import Login from "./views/Login.js";
@@ -9,7 +9,7 @@ import {RegisterEvent} from "./views/Register.js";
 import UserIndex, {UserEvents} from "./views/User.js";
 import Logout, {LogoutEvents} from "./views/Logout.js";
 import addNewMovie, {addNewMovieEvents} from "./views/addMovie.js";
-import editMovieView,{editMovieEvents} from "./views/editMovie.js";
+// import editMovieView,{editMovieEvents} from "./views/editMovie.js";
 
 /**
  * Returns the route object for a specific route based on the given URI
@@ -32,13 +32,13 @@ export default function router(URI) {
             title: 'Logout',
             viewEvent: LogoutEvents
         },
-        '/login': {
-            returnView: Login,
-            state: {},
-            uri: '/login',
-            title: "Login",
-            viewEvent: LoginEvent
-        },
+        // '/login': {
+        //     returnView: Login,
+        //     state: {},
+        //     uri: '/login',
+        //     title: "Login",
+        //     viewEvent: LoginEvent
+        // },
         '/register': {
             returnView: Register,
             state: {
@@ -61,13 +61,13 @@ export default function router(URI) {
             viewEvent: addNewMovieEvents
         },
 
-        "/edit-movie": {
-            returnView: editMovieView,
-            state: {},
-            uri: "/edit-movie",
-            title: 'Edit movie',
-            viewEvent: editMovieEvents
-        },
+        // "/edit-movie": {
+        //     returnView: editMovieView,
+        //     state: {},
+        //     uri: "/edit-movie",
+        //     title: 'Edit movie',
+        //     viewEvent: editMovieEvents
+        // },
 
 
         '/users': {
@@ -77,13 +77,13 @@ export default function router(URI) {
             title: 'User Info',
             viewEvent: UserEvents
         },
-        '/about': {
-            returnView: About,
-            state: {},
-            uri: '/about',
-            title: 'About',
-            viewEvent: AboutEvents
-        },
+        // '/about': {
+        //     returnView: About,
+        //     state: {},
+        //     uri: '/about',
+        //     title: 'About',
+        //     viewEvent: AboutEvents
+        // },
         '/error': {
             returnView: Error404,
             state: {},
